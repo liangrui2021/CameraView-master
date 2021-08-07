@@ -19,6 +19,7 @@ import android.location.Location;
 import android.media.Image;
 import android.media.ImageReader;
 import android.os.Build;
+import android.util.Log;
 import android.util.Pair;
 import android.util.Range;
 import android.util.Rational;
@@ -33,6 +34,7 @@ import androidx.annotation.VisibleForTesting;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
+import com.luoye.bzyuvlib.BZYUVUtil;
 import com.otaliastudios.cameraview.CameraException;
 import com.otaliastudios.cameraview.CameraOptions;
 import com.otaliastudios.cameraview.PictureResult;
@@ -71,6 +73,9 @@ import com.otaliastudios.cameraview.size.Size;
 import com.otaliastudios.cameraview.video.Full2VideoRecorder;
 import com.otaliastudios.cameraview.video.SnapshotVideoRecorder;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -87,6 +92,9 @@ public class Camera2Engine extends CameraBaseEngine implements
     private static final int FRAME_PROCESSING_FORMAT = ImageFormat.YUV_420_888;
     @VisibleForTesting static final long METER_TIMEOUT = 5000;
     private static final long METER_TIMEOUT_SHORT = 2500;
+    private static final int FPS_30 = 30;
+    private static final int SIZE_1920 = 1920;
+    private static final int SIZE_1080 = 1080;
 
     private final CameraManager mManager;
     private String mCameraId;
@@ -96,7 +104,8 @@ public class Camera2Engine extends CameraBaseEngine implements
     private CaptureRequest.Builder mRepeatingRequestBuilder;
     private TotalCaptureResult mLastRepeatingResult;
     private final Camera2Mapper mMapper = Camera2Mapper.get();
-
+    BZYUVUtil YUVUtil;
+    FileOutputStream fileOutputStream;
     // Frame processing
     private ImageReader mFrameProcessingReader; // need this or the reader surface is collected
     private Surface mFrameProcessingSurface;
@@ -121,6 +130,16 @@ public class Camera2Engine extends CameraBaseEngine implements
         super(callback);
         mManager = (CameraManager) getCallback().getContext()
                 .getSystemService(Context.CAMERA_SERVICE);
+        YUVUtil = new BZYUVUtil();
+
+
+        String s = getCallback().getContext().getFilesDir().getAbsolutePath() + "/test.yuv";
+        try {
+            fileOutputStream = new FileOutputStream(s);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
         new LogAction().start(this);
     }
 
@@ -485,7 +504,7 @@ public class Camera2Engine extends CameraBaseEngine implements
         //  when session configuration fails
         //  OR: both.
         mCaptureSize = computeCaptureSize();
-        mPreviewStreamSize = computePreviewStreamSize();
+        mPreviewStreamSize = new Size(SIZE_1920,SIZE_1080);//没有界面预览，设置为固定
 
         // Deal with surfaces.
         // In Camera2, instead of applying the size to the camera params object,
@@ -564,8 +583,8 @@ public class Camera2Engine extends CameraBaseEngine implements
             // simply DROP frames written to the surface if there are no Images available.
             // Since this is not how things work, we ensure that one Image is always available here.
             mFrameProcessingReader = ImageReader.newInstance(
-                    mFrameProcessingSize.getWidth(),
-                    mFrameProcessingSize.getHeight(),
+                    mCaptureSize.getWidth(),
+                    mCaptureSize.getHeight(),
                     mFrameProcessingFormat,
                     getFrameProcessingPoolSize() + 1);
             mFrameProcessingReader.setOnImageAvailableListener(this,
@@ -1389,7 +1408,7 @@ public class Camera2Engine extends CameraBaseEngine implements
         if (mPreviewFrameRate == 0F) {
             // 0F is a special value. Fallback to a reasonable default.
             for (Range<Integer> fpsRange : filterFrameRateRanges(fpsRanges)) {
-                if (fpsRange.contains(30) || fpsRange.contains(24)) {
+                if (fpsRange.getLower() == (FPS_30)) {
                     builder.set(CaptureRequest.CONTROL_AE_TARGET_FPS_RANGE, fpsRange);
                     return true;
                 }
@@ -1401,7 +1420,7 @@ public class Camera2Engine extends CameraBaseEngine implements
             mPreviewFrameRate = Math.max(mPreviewFrameRate,
                     mCameraOptions.getPreviewFrameRateMinValue());
             for (Range<Integer> fpsRange : filterFrameRateRanges(fpsRanges)) {
-                if (fpsRange.contains(Math.round(mPreviewFrameRate))) {
+                if (fpsRange.getLower() == (FPS_30)) {
                     builder.set(CaptureRequest.CONTROL_AE_TARGET_FPS_RANGE, fpsRange);
                     return true;
                 }
@@ -1479,14 +1498,23 @@ public class Camera2Engine extends CameraBaseEngine implements
         } else if (getState() == CameraState.PREVIEW && !isChangingState()) {
             // After preview, the frame manager is correctly set up
             //noinspection unchecked
-            Frame frame = getFrameManager().getFrame(image,
-                    System.currentTimeMillis());
-            if (frame != null) {
-                LOG.v("onImageAvailable:", "Image acquired, dispatching. width: " +image.getWidth()+" height: "+image.getHeight());
-                getCallback().dispatchFrame(frame);
-            } else {
-                LOG.i("onImageAvailable:", "Image acquired, but no free frames. DROPPING.");
+//            Frame frame = getFrameManager().getFrame(image,
+//                    System.currentTimeMillis());
+//            if (frame != null) {
+//                LOG.v("onImageAvailable:", "Image acquired, dispatching. width: " +image.getWidth()+" height: "+image.getHeight());
+////                getCallback().dispatchFrame(frame);
+//               
+//            } else {
+//                LOG.i("onImageAvailable:", "Image acquired, but no free frames. DROPPING.");
+//            }
+            byte[] bytes = YUVUtil.preHandleYUV420(image, false, 0);
+            Log.i(TAG, "onImageAvailable: " +image.getHeight()+" width: "+image.getWidth());
+            try {
+                fileOutputStream.write(bytes);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+            image.close();
         } else {
             LOG.i("onImageAvailable:", "Image acquired in wrong state. Closing it now.");
             image.close();

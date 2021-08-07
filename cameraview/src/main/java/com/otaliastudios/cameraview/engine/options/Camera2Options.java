@@ -136,19 +136,19 @@ public class Camera2Options extends CameraOptions {
 
         // Video Sizes
         // As a safety measure, remove Sizes bigger than CamcorderProfile.highest
-        CamcorderProfile profile = CamcorderProfiles.get(cameraId,
-                new Size(Integer.MAX_VALUE, Integer.MAX_VALUE));
-        Size videoMaxSize = new Size(profile.videoFrameWidth, profile.videoFrameHeight);
-        android.util.Size[] vsizes = streamMap.getOutputSizes(MediaRecorder.class);
-        for (android.util.Size size : vsizes) {
-            if (size.getWidth() <= videoMaxSize.getWidth()
-                    && size.getHeight() <= videoMaxSize.getHeight()) {
-                int width = flipSizes ? size.getHeight() : size.getWidth();
-                int height = flipSizes ? size.getWidth() : size.getHeight();
-                supportedVideoSizes.add(new Size(width, height));
-                supportedVideoAspectRatio.add(AspectRatio.of(width, height));
-            }
-        }
+//        CamcorderProfile profile = CamcorderProfiles.get(cameraId,
+//                new Size(Integer.MAX_VALUE, Integer.MAX_VALUE));
+//        Size videoMaxSize = new Size(profile.videoFrameWidth, profile.videoFrameHeight);
+//        android.util.Size[] vsizes = streamMap.getOutputSizes(MediaRecorder.class);
+//        for (android.util.Size size : vsizes) {
+//            if (size.getWidth() <= videoMaxSize.getWidth()
+//                    && size.getHeight() <= videoMaxSize.getHeight()) {
+//                int width = flipSizes ? size.getHeight() : size.getWidth();
+//                int height = flipSizes ? size.getWidth() : size.getHeight();
+//                supportedVideoSizes.add(new Size(width, height));
+//                supportedVideoAspectRatio.add(AspectRatio.of(width, height));
+//            }
+//        }
 
         // Preview FPS
         Range<Integer>[] range = cameraCharacteristics.get(CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES);

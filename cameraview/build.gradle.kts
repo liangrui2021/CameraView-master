@@ -25,6 +25,7 @@ android {
 }
 
 dependencies {
+    implementation(project(mapOf("path" to ":bzyuv")))
     testImplementation("junit:junit:4.13")
     testImplementation("org.mockito:mockito-inline:2.28.2")
 
