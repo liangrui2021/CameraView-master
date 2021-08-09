@@ -1495,30 +1495,31 @@ public class Camera2Engine extends CameraBaseEngine implements
         } catch (Exception ignore) { }
         if (image == null) {
             LOG.w("onImageAvailable:", "failed to acquire Image!");
-        } else if (getState() == CameraState.PREVIEW && !isChangingState()) {
+        } else if (true) {
             // After preview, the frame manager is correctly set up
             //noinspection unchecked
-//            Frame frame = getFrameManager().getFrame(image,
-//                    System.currentTimeMillis());
-//            if (frame != null) {
-//                LOG.v("onImageAvailable:", "Image acquired, dispatching. width: " +image.getWidth()+" height: "+image.getHeight());
-////                getCallback().dispatchFrame(frame);
-//               
-//            } else {
-//                LOG.i("onImageAvailable:", "Image acquired, but no free frames. DROPPING.");
-//            }
-            byte[] bytes = YUVUtil.preHandleYUV420(image, false, 0);
-            Log.i(TAG, "onImageAvailable: " +image.getHeight()+" width: "+image.getWidth());
-            try {
-                fileOutputStream.write(bytes);
-            } catch (IOException e) {
-                e.printStackTrace();
+            Frame frame = getFrameManager().getFrame(image,
+                    System.currentTimeMillis());
+            if (frame != null) {
+                LOG.v("onImageAvailable:", "Image acquired, dispatching. width: " +image.getWidth()+" height: "+image.getHeight());
+                getCallback().dispatchFrame(frame);
+
+            } else {
+                LOG.i("onImageAvailable:", "Image acquired, but no free frames. DROPPING.");
             }
-            image.close();
-        } else {
-            LOG.i("onImageAvailable:", "Image acquired in wrong state. Closing it now.");
-            image.close();
-        }
+//            byte[] bytes = YUVUtil.preHandleYUV420(image, false, 0);
+//            Log.i(TAG, "onImageAvailable: " +image.getHeight()+" width: "+image.getWidth());
+//            try {
+//                fileOutputStream.write(bytes);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            image.close();
+//        } else {
+//            LOG.i("onImageAvailable:", "Image acquired in wrong state. Closing it now.");
+//            image.close();
+//        }
+    }
     }
 
     @Override

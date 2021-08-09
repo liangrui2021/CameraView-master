@@ -2,29 +2,39 @@ package com.otaliastudios.cameraview.demo
 
 import android.animation.ValueAnimator
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.content.pm.PackageManager.PERMISSION_GRANTED
 import android.graphics.*
+import android.media.Image
+import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.luoye.bzyuvlib.BZYUVUtil
 import com.otaliastudios.cameraview.*
 import com.otaliastudios.cameraview.controls.Facing
 import com.otaliastudios.cameraview.controls.Mode
 import com.otaliastudios.cameraview.controls.Preview
+import com.otaliastudios.cameraview.demo.test264.CameraVideoHardEncoder
+import com.otaliastudios.cameraview.demo.test264.IEncodeListener
+import com.otaliastudios.cameraview.demo.test264.YuvJavaUtil
 import com.otaliastudios.cameraview.filter.Filters
 import com.otaliastudios.cameraview.frame.Frame
 import com.otaliastudios.cameraview.frame.FrameProcessor
-import java.io.ByteArrayOutputStream
 import java.io.File
+import java.io.FileNotFoundException
+import java.io.FileOutputStream
+import java.io.IOException
 import java.util.*
 
-class CameraActivity : AppCompatActivity(), View.OnClickListener, OptionView.Callback {
+class CameraActivity : AppCompatActivity(), View.OnClickListener, OptionView.Callback, IEncodeListener {
 
     companion object {
         private val LOG = CameraLogger.create("DemoApp")
@@ -35,43 +45,62 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener, OptionView.Cal
     private val camera: CameraView by lazy { findViewById(R.id.camera) }
     private val controlPanel: ViewGroup by lazy { findViewById(R.id.controls) }
     private var captureTime: Long = 0
-
+    private lateinit var yuvUtil: BZYUVUtil
+    var fileOutputStream: FileOutputStream? = null
+    var h264FileOutputStream: FileOutputStream? = null
+    var encoder: CameraVideoHardEncoder? = null
     private var currentFilter = 0
     private val allFilters = Filters.values()
-
+    private val SIZE_1920 = 1920
+    private val SIZE_1080 = 1080
+    private val FPS_30 = 30
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
         CameraLogger.setLogLevel(CameraLogger.LEVEL_VERBOSE)
         camera.setLifecycleOwner(this)
         camera.addCameraListener(Listener())
+        yuvUtil = BZYUVUtil()
+        encoder = CameraVideoHardEncoder(this)
+        encoder!!.initEncoder(SIZE_1920, SIZE_1080, 6000000, FPS_30)
+        Handler().postDelayed({
+            encoder!!.startEncoder()
+            encoder!!.requestKeyFrame()
+        }, 2000)
+        val s: String = getFilesDir().getAbsolutePath() + "/test.yuv"
+        try {
+            fileOutputStream = FileOutputStream(s)
+            val file: File = File(getFilesDir().getAbsolutePath() + "/test123.h264")
+            h264FileOutputStream = FileOutputStream(file)
+        } catch (e: FileNotFoundException) {
+            e.printStackTrace()
+        }
+
+        //---------------------------===============
         if (USE_FRAME_PROCESSOR) {
             camera.addFrameProcessor(object : FrameProcessor {
                 private var lastTime = System.currentTimeMillis()
+
+                @RequiresApi(Build.VERSION_CODES.KITKAT)
                 override fun process(frame: Frame) {
                     val newTime = frame.time
                     val delay = newTime - lastTime
                     lastTime = newTime
                     LOG.v("Frame delayMillis:", delay, "FPS:", 1000 / delay)
-                    if (DECODE_BITMAP) {
-                        if (frame.format == ImageFormat.NV21
-                                && frame.dataClass == ByteArray::class.java) {
-                            val data = frame.getData<ByteArray>()
-                            val yuvImage = YuvImage(data,
-                                    frame.format,
-                                    frame.size.width,
-                                    frame.size.height,
-                                    null)
-                            val jpegStream = ByteArrayOutputStream()
-                            yuvImage.compressToJpeg(Rect(0, 0,
-                                    frame.size.width,
-                                    frame.size.height), 100, jpegStream)
-                            val jpegByteArray = jpegStream.toByteArray()
-                            val bitmap = BitmapFactory.decodeByteArray(jpegByteArray,
-                                    0, jpegByteArray.size)
-                            bitmap.toString()
-                        }
+                    val image = frame.getData<Image>()
+                    val bytesYUV420 = yuvUtil.preHandleYUV420(image, false, 0)
+
+                    Log.i(LOG.toString(), "onImageAvailable: " + image.height + " width: " + image.width);
+                    try {
+                        fileOutputStream?.write(bytesYUV420)
+                    } catch (e: IOException) {
+                        e.printStackTrace();
                     }
+                    //            Frame frame = getFrameManager().getFrame(image,
+//                    System.currentTimeMillis());
+                    addDataToEncoder(bytesYUV420, 1920, 1080)
+                    image.close()
+
                 }
             })
         }
@@ -148,6 +177,24 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener, OptionView.Cal
         }
         animator.start()
     }
+
+    open fun addDataToEncoder(srcData: ByteArray, width: Int, height: Int) {
+
+//        byte[] destData = YuvJavaUtil.Companion.rotateYUVDegree90(srcData, width, height);
+
+//        if (HardEncoderHelper.isNv12ColorFormat(colorFormat)) {
+        val yuv420Toyuv420sp: ByteArray = YuvJavaUtil.Companion.yuv420Toyuv420sp(srcData, width, height)
+//        try {
+//            fileOutputStream!!.write(yuv420Toyuv420sp, 0, yuv420Toyuv420sp.size)
+//        } catch (e: IOException) {
+//            e.printStackTrace()
+//        }
+        encoder!!.addFrame(yuv420Toyuv420sp, yuv420Toyuv420sp.size, System.currentTimeMillis())
+//        } else {
+//            encoder?.addFrame(destData, destData.size)
+//        }
+    }
+
 
     private fun message(content: String, important: Boolean) {
         if (important) {
@@ -339,6 +386,14 @@ class CameraActivity : AppCompatActivity(), View.OnClickListener, OptionView.Cal
         val valid = grantResults.all { it == PERMISSION_GRANTED }
         if (valid && !camera.isOpened) {
             camera.open()
+        }
+    }
+
+    override fun onEncodeData(data: ByteArray, size: Int, timeStamp: Int) {
+        try {
+            h264FileOutputStream?.write(data, 0, size)
+        } catch (e: IOException) {
+            e.printStackTrace()
         }
     }
 }
