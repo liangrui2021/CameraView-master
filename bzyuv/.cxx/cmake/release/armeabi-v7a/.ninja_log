@@ -7,3 +7,8 @@
 0	14	0	clean	5d2f52585490060d
 0	10	0	clean	5d2f52585490060d
 0	5	0	clean	5d2f52585490060d
+1	310	1628651757	CMakeFiles/bzyuvlib.dir/bz_time.cpp.o	244eca30a3235122
+2	310	1628651757	CMakeFiles/bzyuvlib.dir/BZLogUtil.cpp.o	320929f552a4fc97
+0	826	1628651757	CMakeFiles/bzyuvlib.dir/native-lib.cpp.o	1bb57d829efcf0a1
+826	920	1628651758	/Users/pengliang/AndroidStudioProjects/CameraView-master/bzyuv/build/intermediates/cmake/release/obj/armeabi-v7a/libbzyuvlib.so	2db96079166c85ae
+0	9	0	clean	5d2f52585490060d

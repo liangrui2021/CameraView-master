@@ -48,3 +48,8 @@
 5	86	1628645972	CMakeFiles/bzyuvlib.dir/BZLogUtil.cpp.o	eb1b1d8fc077f132
 3	790	1628645972	CMakeFiles/bzyuvlib.dir/native-lib.cpp.o	cc3f0ed5b948baf4
 790	933	1628645973	/Users/pengliang/AndroidStudioProjects/CameraView-master/bzyuv/build/intermediates/cmake/debug/obj/arm64-v8a/libbzyuvlib.so	99b7b7428fa7cf2d
+0	9	0	clean	5d2f52585490060d
+4	79	1628653987	CMakeFiles/bzyuvlib.dir/bz_time.cpp.o	68c15b3de4267903
+5	83	1628653987	CMakeFiles/bzyuvlib.dir/BZLogUtil.cpp.o	eb1b1d8fc077f132
+3	764	1628653987	CMakeFiles/bzyuvlib.dir/native-lib.cpp.o	cc3f0ed5b948baf4
+764	926	1628653987	/Users/pengliang/AndroidStudioProjects/CameraView-master/bzyuv/build/intermediates/cmake/debug/obj/arm64-v8a/libbzyuvlib.so	99b7b7428fa7cf2d
