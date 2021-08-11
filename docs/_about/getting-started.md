@@ -9,7 +9,7 @@ disqus: 1
 To use the CameraView engine, simply add a `CameraView` to your layout:
 
 ```xml
-<com.otaliastudios.cameraview.CameraView
+<com.cvte.cameraview.CameraView
     android:id="@+id/camera"
     android:keepScreenOn="true"
     android:layout_width="wrap_content"

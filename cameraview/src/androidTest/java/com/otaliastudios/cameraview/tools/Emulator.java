@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.tools;
+package com.cvte.cameraview.tools;
 
 import android.os.Build;
 

@@ -1,13 +1,13 @@
-package com.otaliastudios.cameraview.engine;
+package com.cvte.cameraview.engine;
 
-import com.otaliastudios.cameraview.CameraLogger;
-import com.otaliastudios.cameraview.CameraOptions;
-import com.otaliastudios.cameraview.controls.Engine;
-import com.otaliastudios.cameraview.frame.Frame;
-import com.otaliastudios.cameraview.frame.FrameProcessor;
-import com.otaliastudios.cameraview.tools.Op;
-import com.otaliastudios.cameraview.tools.Retry;
-import com.otaliastudios.cameraview.tools.SdkExclude;
+import com.cvte.cameraview.CameraLogger;
+import com.cvte.cameraview.CameraOptions;
+import com.cvte.cameraview.controls.Engine;
+import com.cvte.cameraview.frame.Frame;
+import com.cvte.cameraview.frame.FrameProcessor;
+import com.cvte.cameraview.tools.Op;
+import com.cvte.cameraview.tools.Retry;
+import com.cvte.cameraview.tools.SdkExclude;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -17,8 +17,8 @@ android {
         versionName = "2.7.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         testInstrumentationRunnerArgument("filter", "" +
-                "com.otaliastudios.cameraview.tools.SdkExcludeFilter," +
-                "com.otaliastudios.cameraview.tools.SdkIncludeFilter")
+                "com.cvte.cameraview.tools.SdkExcludeFilter," +
+                "com.cvte.cameraview.tools.SdkIncludeFilter")
     }
     buildTypes["debug"].isTestCoverageEnabled = true
     buildTypes["release"].isMinifyEnabled = false

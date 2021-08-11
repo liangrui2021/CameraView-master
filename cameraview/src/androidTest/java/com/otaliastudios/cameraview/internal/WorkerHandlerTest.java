@@ -1,11 +1,11 @@
-package com.otaliastudios.cameraview.internal;
+package com.cvte.cameraview.internal;
 
 
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
-import com.otaliastudios.cameraview.BaseTest;
-import com.otaliastudios.cameraview.internal.WorkerHandler;
-import com.otaliastudios.cameraview.tools.Op;
+import com.cvte.cameraview.BaseTest;
+import com.cvte.cameraview.internal.WorkerHandler;
+import com.cvte.cameraview.tools.Op;
 
 import androidx.annotation.NonNull;
 import androidx.test.ext.junit.runners.AndroidJUnit4;

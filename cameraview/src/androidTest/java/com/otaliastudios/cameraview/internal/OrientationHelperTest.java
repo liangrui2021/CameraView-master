@@ -1,12 +1,12 @@
-package com.otaliastudios.cameraview.internal;
+package com.cvte.cameraview.internal;
 
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;
 import android.view.OrientationEventListener;
 
-import com.otaliastudios.cameraview.BaseTest;
-import com.otaliastudios.cameraview.internal.OrientationHelper;
+import com.cvte.cameraview.BaseTest;
+import com.cvte.cameraview.internal.OrientationHelper;
 
 import org.junit.After;
 import org.junit.Before;

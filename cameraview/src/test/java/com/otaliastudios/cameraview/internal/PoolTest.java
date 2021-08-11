@@ -1,7 +1,7 @@
-package com.otaliastudios.cameraview.internal;
+package com.cvte.cameraview.internal;
 
 
-import com.otaliastudios.cameraview.internal.Pool;
+import com.cvte.cameraview.internal.Pool;
 
 import org.junit.After;
 import org.junit.Before;

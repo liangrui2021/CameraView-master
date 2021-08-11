@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.size;
+package com.cvte.cameraview.size;
 
 
 import android.content.res.TypedArray;
@@ -9,8 +9,8 @@ import androidx.arch.core.util.Function;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;
 
-import com.otaliastudios.cameraview.BaseTest;
-import com.otaliastudios.cameraview.R;
+import com.cvte.cameraview.BaseTest;
+import com.cvte.cameraview.R;
 
 import org.junit.After;
 import org.junit.Before;

@@ -1,11 +1,11 @@
-package com.otaliastudios.cameraview.frame;
+package com.cvte.cameraview.frame;
 
 
 import android.graphics.ImageFormat;
 
 import androidx.annotation.NonNull;
 
-import com.otaliastudios.cameraview.size.Size;
+import com.cvte.cameraview.size.Size;
 
 import org.junit.After;
 import org.junit.Before;

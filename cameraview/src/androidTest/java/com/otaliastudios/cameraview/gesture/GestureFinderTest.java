@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.gesture;
+package com.cvte.cameraview.gesture;
 
 
 import android.annotation.TargetApi;
@@ -13,9 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.otaliastudios.cameraview.BaseTest;
-import com.otaliastudios.cameraview.TestActivity;
-import com.otaliastudios.cameraview.tools.Op;
+import com.cvte.cameraview.BaseTest;
+import com.cvte.cameraview.TestActivity;
+import com.cvte.cameraview.tools.Op;
 
 import org.hamcrest.Matchers;
 import org.junit.Before;

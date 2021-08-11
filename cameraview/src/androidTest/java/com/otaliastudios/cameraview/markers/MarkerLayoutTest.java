@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.markers;
+package com.cvte.cameraview.markers;
 
 
 import android.annotation.TargetApi;
@@ -7,9 +7,9 @@ import android.graphics.PointF;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.otaliastudios.cameraview.BaseTest;
-import com.otaliastudios.cameraview.TestActivity;
-import com.otaliastudios.cameraview.tools.SdkExclude;
+import com.cvte.cameraview.BaseTest;
+import com.cvte.cameraview.TestActivity;
+import com.cvte.cameraview.tools.SdkExclude;
 
 import org.junit.Assert;
 import org.junit.Before;

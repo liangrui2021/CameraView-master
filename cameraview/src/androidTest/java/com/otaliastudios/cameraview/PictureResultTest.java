@@ -1,11 +1,11 @@
-package com.otaliastudios.cameraview;
+package com.cvte.cameraview;
 
 
 import android.location.Location;
 
-import com.otaliastudios.cameraview.controls.Facing;
-import com.otaliastudios.cameraview.controls.PictureFormat;
-import com.otaliastudios.cameraview.size.Size;
+import com.cvte.cameraview.controls.Facing;
+import com.cvte.cameraview.controls.PictureFormat;
+import com.cvte.cameraview.size.Size;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;

@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.overlay;
+package com.cvte.cameraview.overlay;
 
 
 import android.graphics.Canvas;
@@ -6,9 +6,9 @@ import android.graphics.Canvas;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;
 
-import com.otaliastudios.cameraview.BaseEglTest;
-import com.otaliastudios.cameraview.internal.GlTextureDrawer;
-import com.otaliastudios.cameraview.size.Size;
+import com.cvte.cameraview.BaseEglTest;
+import com.cvte.cameraview.internal.GlTextureDrawer;
+import com.cvte.cameraview.size.Size;
 
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;

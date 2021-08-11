@@ -6,12 +6,20 @@ plugins {
 android {
     setCompileSdkVersion(property("compileSdkVersion") as Int)
     defaultConfig {
-        applicationId = "com.otaliastudios.cameraview.demo"
+        applicationId = "com.cvte.cameraview.demo"
         setMinSdkVersion(property("minSdkVersion") as Int)
         setTargetSdkVersion(property("targetSdkVersion") as Int)
         versionCode = 1
         versionName = "1.0"
         vectorDrawables.useSupportLibrary = true
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
     sourceSets["main"].java.srcDir("src/main/kotlin")
 }

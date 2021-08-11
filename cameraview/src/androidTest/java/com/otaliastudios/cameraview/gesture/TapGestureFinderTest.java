@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.gesture;
+package com.cvte.cameraview.gesture;
 
 
 import androidx.annotation.NonNull;
@@ -11,8 +11,8 @@ import androidx.test.filters.SmallTest;
 import android.view.InputDevice;
 import android.view.MotionEvent;
 
-import com.otaliastudios.cameraview.tools.SdkExclude;
-import com.otaliastudios.cameraview.size.Size;
+import com.cvte.cameraview.tools.SdkExclude;
+import com.cvte.cameraview.size.Size;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

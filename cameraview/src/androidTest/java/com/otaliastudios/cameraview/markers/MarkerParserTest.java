@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.markers;
+package com.cvte.cameraview.markers;
 
 
 import android.content.Context;
@@ -14,10 +14,10 @@ import androidx.arch.core.util.Function;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;
 
-import com.otaliastudios.cameraview.BaseTest;
-import com.otaliastudios.cameraview.R;
-import com.otaliastudios.cameraview.size.Size;
-import com.otaliastudios.cameraview.size.SizeSelectorParser;
+import com.cvte.cameraview.BaseTest;
+import com.cvte.cameraview.R;
+import com.cvte.cameraview.size.Size;
+import com.cvte.cameraview.size.SizeSelectorParser;
 
 import org.junit.After;
 import org.junit.Before;

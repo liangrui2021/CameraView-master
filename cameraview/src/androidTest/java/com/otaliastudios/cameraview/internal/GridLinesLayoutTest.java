@@ -1,12 +1,12 @@
-package com.otaliastudios.cameraview.internal;
+package com.cvte.cameraview.internal;
 
 
-import com.otaliastudios.cameraview.BaseTest;
-import com.otaliastudios.cameraview.TestActivity;
-import com.otaliastudios.cameraview.controls.Grid;
-import com.otaliastudios.cameraview.tools.Op;
-import com.otaliastudios.cameraview.tools.Retry;
-import com.otaliastudios.cameraview.tools.RetryRule;
+import com.cvte.cameraview.BaseTest;
+import com.cvte.cameraview.TestActivity;
+import com.cvte.cameraview.controls.Grid;
+import com.cvte.cameraview.tools.Op;
+import com.cvte.cameraview.tools.Retry;
+import com.cvte.cameraview.tools.RetryRule;
 
 import androidx.annotation.NonNull;
 import androidx.test.ext.junit.runners.AndroidJUnit4;

@@ -169,24 +169,24 @@ way for the future. These changes are listed below:
 
 |Class name|Old package|New package|
 |----------|-----------|-----------|
-|`Audio`|`com.otaliastudios.cameraview`|`com.otaliastudios.cameraview.controls`|
-|`Control`|`com.otaliastudios.cameraview`|`com.otaliastudios.cameraview.controls`|
-|`Facing`|`com.otaliastudios.cameraview`|`com.otaliastudios.cameraview.controls`|
-|`Flash`|`com.otaliastudios.cameraview`|`com.otaliastudios.cameraview.controls`|
-|`Grid`|`com.otaliastudios.cameraview`|`com.otaliastudios.cameraview.controls`|
-|`Hdr`|`com.otaliastudios.cameraview`|`com.otaliastudios.cameraview.controls`|
-|`Mode`|`com.otaliastudios.cameraview`|`com.otaliastudios.cameraview.controls`|
-|`Preview`|`com.otaliastudios.cameraview`|`com.otaliastudios.cameraview.controls`|
-|`VideoCodec`|`com.otaliastudios.cameraview`|`com.otaliastudios.cameraview.controls`|
-|`WhiteBalance`|`com.otaliastudios.cameraview`|`com.otaliastudios.cameraview.controls`|
-|`Frame`|`com.otaliastudios.cameraview`|`com.otaliastudios.cameraview.frame`|
-|`FrameProcessor`|`com.otaliastudios.cameraview`|`com.otaliastudios.cameraview.frame`|
-|`Gesture`|`com.otaliastudios.cameraview`|`com.otaliastudios.cameraview.gesture`|
-|`GestureAction`|`com.otaliastudios.cameraview`|`com.otaliastudios.cameraview.gesture`|
-|`Size`|`com.otaliastudios.cameraview`|`com.otaliastudios.cameraview.size`|
-|`SizeSelector`|`com.otaliastudios.cameraview`|`com.otaliastudios.cameraview.size`|
-|`SizeSelectors`|`com.otaliastudios.cameraview`|`com.otaliastudios.cameraview.size`|
-|`AspectRatio`|`com.otaliastudios.cameraview`|`com.otaliastudios.cameraview.size`|
+|`Audio`|`com.cvte.cameraview`|`com.cvte.cameraview.controls`|
+|`Control`|`com.cvte.cameraview`|`com.cvte.cameraview.controls`|
+|`Facing`|`com.cvte.cameraview`|`com.cvte.cameraview.controls`|
+|`Flash`|`com.cvte.cameraview`|`com.cvte.cameraview.controls`|
+|`Grid`|`com.cvte.cameraview`|`com.cvte.cameraview.controls`|
+|`Hdr`|`com.cvte.cameraview`|`com.cvte.cameraview.controls`|
+|`Mode`|`com.cvte.cameraview`|`com.cvte.cameraview.controls`|
+|`Preview`|`com.cvte.cameraview`|`com.cvte.cameraview.controls`|
+|`VideoCodec`|`com.cvte.cameraview`|`com.cvte.cameraview.controls`|
+|`WhiteBalance`|`com.cvte.cameraview`|`com.cvte.cameraview.controls`|
+|`Frame`|`com.cvte.cameraview`|`com.cvte.cameraview.frame`|
+|`FrameProcessor`|`com.cvte.cameraview`|`com.cvte.cameraview.frame`|
+|`Gesture`|`com.cvte.cameraview`|`com.cvte.cameraview.gesture`|
+|`GestureAction`|`com.cvte.cameraview`|`com.cvte.cameraview.gesture`|
+|`Size`|`com.cvte.cameraview`|`com.cvte.cameraview.size`|
+|`SizeSelector`|`com.cvte.cameraview`|`com.cvte.cameraview.size`|
+|`SizeSelectors`|`com.cvte.cameraview`|`com.cvte.cameraview.size`|
+|`AspectRatio`|`com.cvte.cameraview`|`com.cvte.cameraview.size`|
 
 ### AutoFocus changes
 

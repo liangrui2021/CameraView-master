@@ -42,7 +42,7 @@ In practice, this is way easier using XML attributes or leveraging the `SizeSele
 ### XML attributes
 
 ```xml
-<com.otaliastudios.cameraview.CameraView
+<com.cvte.cameraview.CameraView
     app:cameraPictureSizeMinWidth="100"
     app:cameraPictureSizeMinHeight="100"
     app:cameraPictureSizeMaxWidth="3000"

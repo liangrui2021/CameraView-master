@@ -1,7 +1,7 @@
-package com.otaliastudios.cameraview;
+package com.cvte.cameraview;
 
 
-import com.otaliastudios.cameraview.tools.Op;
+import com.cvte.cameraview.tools.Op;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;

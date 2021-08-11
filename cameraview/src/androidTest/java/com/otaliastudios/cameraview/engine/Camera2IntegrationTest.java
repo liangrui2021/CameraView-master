@@ -1,13 +1,13 @@
-package com.otaliastudios.cameraview.engine;
+package com.cvte.cameraview.engine;
 
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CaptureRequest;
 import android.hardware.camera2.TotalCaptureResult;
 import android.os.Handler;
 
-import com.otaliastudios.cameraview.controls.Engine;
-import com.otaliastudios.cameraview.engine.action.ActionHolder;
-import com.otaliastudios.cameraview.engine.action.BaseAction;
+import com.cvte.cameraview.controls.Engine;
+import com.cvte.cameraview.engine.action.ActionHolder;
+import com.cvte.cameraview.engine.action.BaseAction;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

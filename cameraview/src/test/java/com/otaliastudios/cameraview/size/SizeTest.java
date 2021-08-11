@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.size;
+package com.cvte.cameraview.size;
 
 
 import org.junit.Test;

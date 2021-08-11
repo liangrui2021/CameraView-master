@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.preview;
+package com.cvte.cameraview.preview;
 
 
 import android.content.Context;
@@ -7,8 +7,8 @@ import androidx.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.otaliastudios.cameraview.filter.Filter;
-import com.otaliastudios.cameraview.preview.CameraPreview;
+import com.cvte.cameraview.filter.Filter;
+import com.cvte.cameraview.preview.CameraPreview;
 
 public class MockCameraPreview extends CameraPreview<View, Void> implements FilterCameraPreview {
 

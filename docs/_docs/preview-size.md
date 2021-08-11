@@ -28,7 +28,7 @@ The view will try to fill the available space, but respecting the stream aspect 
 
 
 ```xml
-<com.otaliastudios.cameraview.CameraView
+<com.cvte.cameraview.CameraView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
 ```
@@ -43,7 +43,7 @@ behavior. The camera view will fill the rect. If your dimensions don't match the
 of the internal preview surface, the surface will be cropped to fill the view.
 
 ```xml
-<com.otaliastudios.cameraview.CameraView
+<com.cvte.cameraview.CameraView
     android:layout_width="match_parent"
     android:layout_height="match_parent" />
 ```

@@ -8,7 +8,7 @@
     android:layout_height="match_parent">
 
     <!-- Camera -->
-<!--    <com.otaliastudios.cameraview.CameraView-->
+<!--    <com.cvte.cameraview.CameraView-->
 <!--        android:id="@+id/camera"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
@@ -42,7 +42,7 @@
 <!--            app:layout_drawOnPreview="true"-->
 <!--            app:layout_drawOnVideoSnapshot="true" />-->
 
-<!--    </com.otaliastudios.cameraview.CameraView>-->
+<!--    </com.cvte.cameraview.CameraView>-->
 
     <LinearLayout
         android:layout_width="wrap_content"

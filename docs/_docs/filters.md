@@ -16,7 +16,7 @@ flag to use it. The only condition is to use the `Preview.GL_SURFACE` preview.
 ### Simple usage
 
 ```xml
-<com.otaliastudios.cameraview.CameraView
+<com.cvte.cameraview.CameraView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:cameraFilter="@string/cameraview_filter_none"/>
@@ -129,7 +129,7 @@ We recommend:
 - If accepting parameters, implementing `OneParameterFilter` or `TwoParameterFilter` as well
 
 Most of all, the best way of learning is by looking at the current filters implementations in the
-`com.otaliastudios.cameraview.filters` package.
+`com.cvte.cameraview.filters` package.
 
 ### Related APIs
 

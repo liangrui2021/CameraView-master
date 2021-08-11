@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.preview;
+package com.cvte.cameraview.preview;
 
 
 import android.content.Context;

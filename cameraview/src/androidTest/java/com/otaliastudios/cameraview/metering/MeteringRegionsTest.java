@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.metering;
+package com.cvte.cameraview.metering;
 
 
 import android.content.Context;
@@ -14,12 +14,12 @@ import androidx.annotation.Nullable;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;
 
-import com.otaliastudios.cameraview.BaseTest;
-import com.otaliastudios.cameraview.R;
-import com.otaliastudios.cameraview.markers.AutoFocusMarker;
-import com.otaliastudios.cameraview.markers.AutoFocusTrigger;
-import com.otaliastudios.cameraview.markers.MarkerParser;
-import com.otaliastudios.cameraview.size.Size;
+import com.cvte.cameraview.BaseTest;
+import com.cvte.cameraview.R;
+import com.cvte.cameraview.markers.AutoFocusMarker;
+import com.cvte.cameraview.markers.AutoFocusTrigger;
+import com.cvte.cameraview.markers.MarkerParser;
+import com.cvte.cameraview.size.Size;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

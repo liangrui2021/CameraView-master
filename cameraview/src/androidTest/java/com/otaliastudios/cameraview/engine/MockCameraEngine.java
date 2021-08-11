@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.engine;
+package com.cvte.cameraview.engine;
 
 
 import android.graphics.PointF;
@@ -7,21 +7,21 @@ import android.location.Location;
 
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
-import com.otaliastudios.cameraview.CameraOptions;
-import com.otaliastudios.cameraview.PictureResult;
-import com.otaliastudios.cameraview.VideoResult;
-import com.otaliastudios.cameraview.controls.Facing;
-import com.otaliastudios.cameraview.controls.Flash;
-import com.otaliastudios.cameraview.controls.PictureFormat;
-import com.otaliastudios.cameraview.engine.orchestrator.CameraState;
-import com.otaliastudios.cameraview.frame.ByteBufferFrameManager;
-import com.otaliastudios.cameraview.frame.FrameManager;
-import com.otaliastudios.cameraview.gesture.Gesture;
-import com.otaliastudios.cameraview.controls.Hdr;
-import com.otaliastudios.cameraview.controls.WhiteBalance;
-import com.otaliastudios.cameraview.metering.MeteringRegions;
-import com.otaliastudios.cameraview.size.AspectRatio;
-import com.otaliastudios.cameraview.size.Size;
+import com.cvte.cameraview.CameraOptions;
+import com.cvte.cameraview.PictureResult;
+import com.cvte.cameraview.VideoResult;
+import com.cvte.cameraview.controls.Facing;
+import com.cvte.cameraview.controls.Flash;
+import com.cvte.cameraview.controls.PictureFormat;
+import com.cvte.cameraview.engine.orchestrator.CameraState;
+import com.cvte.cameraview.frame.ByteBufferFrameManager;
+import com.cvte.cameraview.frame.FrameManager;
+import com.cvte.cameraview.gesture.Gesture;
+import com.cvte.cameraview.controls.Hdr;
+import com.cvte.cameraview.controls.WhiteBalance;
+import com.cvte.cameraview.metering.MeteringRegions;
+import com.cvte.cameraview.size.AspectRatio;
+import com.cvte.cameraview.size.Size;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

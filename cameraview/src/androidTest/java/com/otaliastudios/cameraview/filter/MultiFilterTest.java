@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.filter;
+package com.cvte.cameraview.filter;
 
 
 import android.opengl.GLES20;
@@ -6,12 +6,12 @@ import android.opengl.GLES20;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;
 
-import com.otaliastudios.cameraview.BaseEglTest;
-import com.otaliastudios.cameraview.filters.AutoFixFilter;
-import com.otaliastudios.cameraview.filters.BrightnessFilter;
-import com.otaliastudios.cameraview.filters.DuotoneFilter;
-import com.otaliastudios.cameraview.filters.VignetteFilter;
-import com.otaliastudios.cameraview.internal.GlTextureDrawer;
+import com.cvte.cameraview.BaseEglTest;
+import com.cvte.cameraview.filters.AutoFixFilter;
+import com.cvte.cameraview.filters.BrightnessFilter;
+import com.cvte.cameraview.filters.DuotoneFilter;
+import com.cvte.cameraview.filters.VignetteFilter;
+import com.cvte.cameraview.internal.GlTextureDrawer;
 import com.otaliastudios.opengl.program.GlProgram;
 
 import org.junit.Test;

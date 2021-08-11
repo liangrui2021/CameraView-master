@@ -90,7 +90,7 @@ or in the [v1 migration guide](https://natario1.github.io/CameraView/extra/v1-mi
 Using CameraView is extremely simple:
 
 ```xml
-<com.otaliastudios.cameraview.CameraView
+<com.cvte.cameraview.CameraView
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -162,5 +162,5 @@ Using CameraView is extremely simple:
         app:layout_drawOnPictureSnapshot="true|false"
         app:layout_drawOnVideoSnapshot="true|false"/>
         
-</com.otaliastudios.cameraview.CameraView>
+</com.cvte.cameraview.CameraView>
 ```

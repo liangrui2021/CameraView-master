@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.frame;
+package com.cvte.cameraview.frame;
 
 
 import android.graphics.ImageFormat;
@@ -7,9 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;
 
-import com.otaliastudios.cameraview.BaseTest;
-import com.otaliastudios.cameraview.engine.offset.Angles;
-import com.otaliastudios.cameraview.size.Size;
+import com.cvte.cameraview.BaseTest;
+import com.cvte.cameraview.engine.offset.Angles;
+import com.cvte.cameraview.size.Size;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

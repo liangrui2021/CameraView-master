@@ -142,7 +142,7 @@ EV correction is not guaranteed to be supported: check the `CameraOptions` to be
 ### Related XML Attributes
 
 ```xml
-<com.otaliastudios.cameraview.CameraView
+<com.cvte.cameraview.CameraView
     app:cameraPictureMetering="true|false"
     app:cameraPictureSnapshotMetering="false|true"
     app:cameraAutoFocusMarker="@string/cameraview_default_autofocus_marker"

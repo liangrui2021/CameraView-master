@@ -13,7 +13,7 @@ taken with `takePictureSnapshot()` or `takeVideoSnapshot()`.
 ### Simple Usage
 
 ```xml
-<com.otaliastudios.cameraview.CameraView
+<com.cvte.cameraview.CameraView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
     
@@ -29,7 +29,7 @@ taken with `takePictureSnapshot()` or `takeVideoSnapshot()`.
         
     <!-- More overlays here... -->
         
-</com.otaliastudios.cameraview.CameraView>
+</com.cvte.cameraview.CameraView>
 ```
 
 As you can see, the overlay system is View-based - each overlay is just a real `View` attached
@@ -87,7 +87,7 @@ To capture a hardware rendered View such as a video rendered to a TextureView, e
 `cameraDrawHardwareOverlays` flag:
 
 ```xml
-<com.otaliastudios.cameraview.CameraView
+<com.cvte.cameraview.CameraView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:cameraDrawHardwareOverlays="true"/>

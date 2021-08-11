@@ -46,7 +46,7 @@ These picture snapshots will also work while taking videos.
 ### XML Attributes
 
 ```xml
-<com.otaliastudios.cameraview.CameraView
+<com.cvte.cameraview.CameraView
     app:cameraEngine="camera1|camera2"
     app:cameraPreview="surface|texture|glSurface"/>
 ```

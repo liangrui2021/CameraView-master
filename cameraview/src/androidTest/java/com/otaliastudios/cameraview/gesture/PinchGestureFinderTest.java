@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.gesture;
+package com.cvte.cameraview.gesture;
 
 
 import androidx.annotation.NonNull;
@@ -6,7 +6,7 @@ import androidx.test.espresso.ViewAction;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;
 
-import com.otaliastudios.cameraview.tools.SdkExclude;
+import com.cvte.cameraview.tools.SdkExclude;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

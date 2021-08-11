@@ -1,8 +1,8 @@
-package com.otaliastudios.cameraview.tools;
+package com.cvte.cameraview.tools;
 
 import android.os.Build;
 
-import com.otaliastudios.cameraview.CameraLogger;
+import com.cvte.cameraview.CameraLogger;
 
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;

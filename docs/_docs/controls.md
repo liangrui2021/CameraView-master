@@ -17,7 +17,7 @@ or `CameraOptions.supports(Control)` to see if it is supported.
 ### XML Attributes
 
 ```xml
-<com.otaliastudios.cameraview.CameraView
+<com.cvte.cameraview.CameraView
     app:cameraFacing="front|back"
     app:cameraFlash="off|on|auto|torch"
     app:cameraWhiteBalance="auto|incandescent|fluorescent|daylight|cloudy"

@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.preview;
+package com.cvte.cameraview.preview;
 
 
 import android.content.Context;
@@ -7,8 +7,8 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;
 import android.view.ViewGroup;
 
-import com.otaliastudios.cameraview.filter.Filter;
-import com.otaliastudios.cameraview.filter.Filters;
+import com.cvte.cameraview.filter.Filter;
+import com.cvte.cameraview.filter.Filters;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

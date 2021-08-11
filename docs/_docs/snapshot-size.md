@@ -53,7 +53,7 @@ that are smaller than you would expect, or with a **very slightly** different as
 ### XML Attributes
 
 ```xml
-<com.otaliastudios.cameraview.CameraView
+<com.cvte.cameraview.CameraView
     app:cameraSnapshotMaxWidth="500"
     app:cameraSnapshotMaxHeight="500"/>
 ```

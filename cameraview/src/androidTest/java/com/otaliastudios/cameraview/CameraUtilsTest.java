@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview;
+package com.cvte.cameraview;
 
 
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 
-import com.otaliastudios.cameraview.tools.Op;
+import com.cvte.cameraview.tools.Op;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

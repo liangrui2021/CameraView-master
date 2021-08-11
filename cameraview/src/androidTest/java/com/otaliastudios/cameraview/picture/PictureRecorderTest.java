@@ -1,8 +1,8 @@
-package com.otaliastudios.cameraview.picture;
+package com.cvte.cameraview.picture;
 
 
-import com.otaliastudios.cameraview.BaseTest;
-import com.otaliastudios.cameraview.PictureResult;
+import com.cvte.cameraview.BaseTest;
+import com.cvte.cameraview.PictureResult;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;

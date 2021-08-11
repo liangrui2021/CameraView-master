@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview;
+package com.cvte.cameraview;
 
 
 import android.app.KeyguardManager;
@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.rule.GrantPermissionRule;
 
-import com.otaliastudios.cameraview.tools.Op;
+import com.cvte.cameraview.tools.Op;
 
 import org.junit.After;
 import org.junit.AfterClass;

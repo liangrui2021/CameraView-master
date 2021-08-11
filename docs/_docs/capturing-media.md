@@ -60,7 +60,7 @@ This is allowed at the following conditions:
 ### Related XML attributes
 
 ```xml
-<com.otaliastudios.cameraview.CameraView
+<com.cvte.cameraview.CameraView
     app:cameraMode="picture|video"/>
 ```
 

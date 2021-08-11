@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.markers;
+package com.cvte.cameraview.markers;
 
 
 import android.graphics.PointF;
@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 
 import androidx.test.annotation.UiThreadTest;
 
-import com.otaliastudios.cameraview.BaseTest;
+import com.cvte.cameraview.BaseTest;
 
 import org.junit.After;
 import org.junit.Assert;

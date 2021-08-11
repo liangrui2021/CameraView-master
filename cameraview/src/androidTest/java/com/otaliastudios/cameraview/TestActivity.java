@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview;
+package com.cvte.cameraview;
 
 
 import android.app.Activity;
@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
-import com.otaliastudios.cameraview.size.Size;
+import com.cvte.cameraview.size.Size;
 
 import static android.view.ViewGroup.LayoutParams.*;
 

@@ -1,10 +1,10 @@
-package com.otaliastudios.cameraview.tools;
+package com.cvte.cameraview.tools;
 
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.otaliastudios.cameraview.controls.Control;
+import com.cvte.cameraview.controls.Control;
 
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;

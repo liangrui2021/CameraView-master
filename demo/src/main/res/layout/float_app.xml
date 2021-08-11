@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rlContent"
+    android:layout_width="180dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ivClose"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentEnd="true"
+        android:padding="10dp"
+        android:src="@drawable/ic_edit" />
+
+
+
+    <TextView
+        android:id="@+id/tvOpenMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        android:text="打开首页"
+         />
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvOpenMain"
+        android:checked="true"
+        android:text="是否可拖拽"
+         />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkbox"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:max="100"
+        android:progress="66" />
+
+    <com.cvte.cameraview.CameraView
+        android:id="@+id/camera"
+        android:layout_below="@id/seekBar"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="88dp"
+        android:keepScreenOn="true"
+        app:cameraExperimental="true"
+        app:cameraEngine="camera2"
+        app:cameraPreview="glSurface"
+        app:cameraPlaySounds="true"
+        app:cameraGrid="off"
+        app:cameraFlash="auto"
+        app:cameraAudio="on"
+        app:cameraFacing="front"
+        app:cameraGestureTap="autoFocus"
+        app:cameraGesturePinch="zoom"
+        app:cameraGestureScrollHorizontal="filterControl1"
+        app:cameraGestureScrollVertical="exposureCorrection"
+        app:cameraMode="picture"
+        app:cameraAutoFocusMarker="@string/cameraview_default_autofocus_marker">
+
+        <!-- Watermark -->
+        <ImageView
+            android:id="@+id/watermark"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_gravity="bottom|end"
+            android:src="@mipmap/logo"
+            app:layout_drawOnPictureSnapshot="true"
+            app:layout_drawOnPreview="true"
+            app:layout_drawOnVideoSnapshot="true" />
+
+    </com.cvte.cameraview.CameraView>
+
+</RelativeLayout>

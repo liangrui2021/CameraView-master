@@ -1,0 +1,7 @@
+Executable : /Users/pengliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja
+arguments : 
+-C
+/Users/pengliang/AndroidStudioProjects/CameraView-master/bzyuv/.cxx/cmake/debug/armeabi-v7a
+bzyuvlib
+jvmArgs : 
+

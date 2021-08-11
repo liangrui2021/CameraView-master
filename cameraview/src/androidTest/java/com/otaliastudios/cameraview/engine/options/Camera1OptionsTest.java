@@ -1,25 +1,25 @@
-package com.otaliastudios.cameraview.engine.options;
+package com.cvte.cameraview.engine.options;
 
 
 import android.graphics.ImageFormat;
 import android.hardware.Camera;
 
-import com.otaliastudios.cameraview.BaseTest;
-import com.otaliastudios.cameraview.CameraOptions;
-import com.otaliastudios.cameraview.controls.Audio;
-import com.otaliastudios.cameraview.controls.AudioCodec;
-import com.otaliastudios.cameraview.controls.Facing;
-import com.otaliastudios.cameraview.controls.Flash;
-import com.otaliastudios.cameraview.controls.PictureFormat;
-import com.otaliastudios.cameraview.engine.mappers.Camera1Mapper;
-import com.otaliastudios.cameraview.gesture.GestureAction;
-import com.otaliastudios.cameraview.controls.Grid;
-import com.otaliastudios.cameraview.controls.Hdr;
-import com.otaliastudios.cameraview.controls.Mode;
-import com.otaliastudios.cameraview.controls.VideoCodec;
-import com.otaliastudios.cameraview.controls.WhiteBalance;
-import com.otaliastudios.cameraview.size.AspectRatio;
-import com.otaliastudios.cameraview.size.Size;
+import com.cvte.cameraview.BaseTest;
+import com.cvte.cameraview.CameraOptions;
+import com.cvte.cameraview.controls.Audio;
+import com.cvte.cameraview.controls.AudioCodec;
+import com.cvte.cameraview.controls.Facing;
+import com.cvte.cameraview.controls.Flash;
+import com.cvte.cameraview.controls.PictureFormat;
+import com.cvte.cameraview.engine.mappers.Camera1Mapper;
+import com.cvte.cameraview.gesture.GestureAction;
+import com.cvte.cameraview.controls.Grid;
+import com.cvte.cameraview.controls.Hdr;
+import com.cvte.cameraview.controls.Mode;
+import com.cvte.cameraview.controls.VideoCodec;
+import com.cvte.cameraview.controls.WhiteBalance;
+import com.cvte.cameraview.size.AspectRatio;
+import com.cvte.cameraview.size.Size;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;

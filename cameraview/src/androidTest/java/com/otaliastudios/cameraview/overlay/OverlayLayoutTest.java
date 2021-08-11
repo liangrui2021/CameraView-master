@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.overlay;
+package com.cvte.cameraview.overlay;
 
 
 import android.content.res.XmlResourceParser;
@@ -13,7 +13,7 @@ import androidx.test.annotation.UiThreadTest;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;
 
-import com.otaliastudios.cameraview.BaseTest;
+import com.cvte.cameraview.BaseTest;
 
 import org.junit.After;
 import org.junit.Before;
@@ -61,8 +61,8 @@ public class OverlayLayoutTest extends BaseTest {
 
     @Test
     public void testIsOverlay_attributeSet() throws Exception {
-        int layout1 = com.otaliastudios.cameraview.test.R.layout.overlay;
-        int layout2 = com.otaliastudios.cameraview.test.R.layout.not_overlay;
+        int layout1 = com.cvte.cameraview.test.R.layout.overlay;
+        int layout2 = com.cvte.cameraview.test.R.layout.not_overlay;
 
         AttributeSet set1 = getAttributeSet(layout1);
         assertTrue(overlayLayout.isOverlay(set1));

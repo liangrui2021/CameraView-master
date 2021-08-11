@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/Users/pengliang/AndroidStudioProjects/CameraView-master/bzyuv/src/main/cpp/CMakeLists.txt",
+    "/Users/pengliang/Library/Android/sdk/ndk/21.4.7075529/build/cmake/android.toolchain.cmake",
+    "/Users/pengliang/Library/Android/sdk/ndk/21.4.7075529/build/cmake/platforms.cmake"
+  ],
+  "cleanCommands": [
+    "/Users/pengliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/pengliang/AndroidStudioProjects/CameraView-master/bzyuv/.cxx/cmake/release/armeabi-v7a\" clean"
+  ],
+  "buildTargetsCommand": "/Users/pengliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/Users/pengliang/AndroidStudioProjects/CameraView-master/bzyuv/.cxx/cmake/release/armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "bzyuvlib-Release-armeabi-v7a": {
+      "artifactName": "bzyuvlib",
+      "buildCommand": "/Users/pengliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/pengliang/AndroidStudioProjects/CameraView-master/bzyuv/.cxx/cmake/release/armeabi-v7a\" bzyuvlib",
+      "abi": "armeabi-v7a",
+      "output": "/Users/pengliang/AndroidStudioProjects/CameraView-master/bzyuv/build/intermediates/cmake/release/obj/armeabi-v7a/libbzyuvlib.so",
+      "runtimeFiles": []
+    }
+  }
+}

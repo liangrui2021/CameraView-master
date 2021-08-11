@@ -1,12 +1,12 @@
-package com.otaliastudios.cameraview.internal;
+package com.cvte.cameraview.internal;
 
 
 import android.graphics.Rect;
 
-import com.otaliastudios.cameraview.BaseTest;
-import com.otaliastudios.cameraview.internal.CropHelper;
-import com.otaliastudios.cameraview.size.AspectRatio;
-import com.otaliastudios.cameraview.size.Size;
+import com.cvte.cameraview.BaseTest;
+import com.cvte.cameraview.internal.CropHelper;
+import com.cvte.cameraview.size.AspectRatio;
+import com.cvte.cameraview.size.Size;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;

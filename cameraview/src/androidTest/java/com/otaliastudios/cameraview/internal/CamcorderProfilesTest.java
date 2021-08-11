@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview.internal;
+package com.cvte.cameraview.internal;
 
 
 import android.media.CamcorderProfile;
@@ -6,11 +6,11 @@ import android.media.CamcorderProfile;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;
 
-import com.otaliastudios.cameraview.BaseTest;
-import com.otaliastudios.cameraview.CameraUtils;
-import com.otaliastudios.cameraview.internal.CamcorderProfiles;
-import com.otaliastudios.cameraview.tools.SdkExclude;
-import com.otaliastudios.cameraview.size.Size;
+import com.cvte.cameraview.BaseTest;
+import com.cvte.cameraview.CameraUtils;
+import com.cvte.cameraview.internal.CamcorderProfiles;
+import com.cvte.cameraview.tools.SdkExclude;
+import com.cvte.cameraview.size.Size;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

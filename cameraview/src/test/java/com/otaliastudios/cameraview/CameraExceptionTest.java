@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview;
+package com.cvte.cameraview;
 
 
 import org.junit.Test;

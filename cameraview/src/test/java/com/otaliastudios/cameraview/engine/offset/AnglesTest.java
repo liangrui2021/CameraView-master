@@ -1,7 +1,7 @@
-package com.otaliastudios.cameraview.engine.offset;
+package com.cvte.cameraview.engine.offset;
 
 
-import com.otaliastudios.cameraview.controls.Facing;
+import com.cvte.cameraview.controls.Facing;
 
 import org.junit.After;
 import org.junit.Before;

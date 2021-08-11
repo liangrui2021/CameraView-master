@@ -9,7 +9,7 @@ disqus: 1
 ### Extra controls
 
 ```xml
-<com.otaliastudios.cameraview.CameraView
+<com.cvte.cameraview.CameraView
     app:cameraPlaySounds="true|false"
     app:cameraGrid="off|draw3x3|draw4x4|drawPhi"
     app:cameraGridColor="@color/black"

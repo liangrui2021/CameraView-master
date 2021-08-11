@@ -1,4 +1,4 @@
-package com.otaliastudios.cameraview;
+package com.cvte.cameraview;
 
 
 import android.content.Context;
@@ -9,21 +9,21 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.MediumTest;
 import android.view.ViewGroup;
 
-import com.otaliastudios.cameraview.controls.Audio;
-import com.otaliastudios.cameraview.controls.Engine;
-import com.otaliastudios.cameraview.controls.Preview;
-import com.otaliastudios.cameraview.engine.CameraEngine;
-import com.otaliastudios.cameraview.frame.Frame;
-import com.otaliastudios.cameraview.frame.FrameProcessor;
-import com.otaliastudios.cameraview.gesture.Gesture;
-import com.otaliastudios.cameraview.gesture.GestureAction;
-import com.otaliastudios.cameraview.tools.Op;
-import com.otaliastudios.cameraview.engine.MockCameraEngine;
-import com.otaliastudios.cameraview.markers.AutoFocusMarker;
-import com.otaliastudios.cameraview.markers.AutoFocusTrigger;
-import com.otaliastudios.cameraview.markers.MarkerLayout;
-import com.otaliastudios.cameraview.preview.MockCameraPreview;
-import com.otaliastudios.cameraview.preview.CameraPreview;
+import com.cvte.cameraview.controls.Audio;
+import com.cvte.cameraview.controls.Engine;
+import com.cvte.cameraview.controls.Preview;
+import com.cvte.cameraview.engine.CameraEngine;
+import com.cvte.cameraview.frame.Frame;
+import com.cvte.cameraview.frame.FrameProcessor;
+import com.cvte.cameraview.gesture.Gesture;
+import com.cvte.cameraview.gesture.GestureAction;
+import com.cvte.cameraview.tools.Op;
+import com.cvte.cameraview.engine.MockCameraEngine;
+import com.cvte.cameraview.markers.AutoFocusMarker;
+import com.cvte.cameraview.markers.AutoFocusTrigger;
+import com.cvte.cameraview.markers.MarkerLayout;
+import com.cvte.cameraview.preview.MockCameraPreview;
+import com.cvte.cameraview.preview.CameraPreview;
 
 import org.junit.After;
 import org.junit.Before;

@@ -1,15 +1,15 @@
-package com.otaliastudios.cameraview.preview;
+package com.cvte.cameraview.preview;
 
 
 import android.content.Context;
 import androidx.test.rule.ActivityTestRule;
 import android.view.ViewGroup;
 
-import com.otaliastudios.cameraview.BaseTest;
-import com.otaliastudios.cameraview.TestActivity;
-import com.otaliastudios.cameraview.tools.Op;
-import com.otaliastudios.cameraview.size.AspectRatio;
-import com.otaliastudios.cameraview.size.Size;
+import com.cvte.cameraview.BaseTest;
+import com.cvte.cameraview.TestActivity;
+import com.cvte.cameraview.tools.Op;
+import com.cvte.cameraview.size.AspectRatio;
+import com.cvte.cameraview.size.Size;
 
 import org.junit.After;
 import org.junit.Before;

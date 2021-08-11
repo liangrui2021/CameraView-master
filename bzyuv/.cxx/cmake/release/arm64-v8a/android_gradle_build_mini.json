@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/Users/pengliang/AndroidStudioProjects/CameraView-master/bzyuv/src/main/cpp/CMakeLists.txt",
+    "/Users/pengliang/Library/Android/sdk/ndk/21.4.7075529/build/cmake/android.toolchain.cmake",
+    "/Users/pengliang/Library/Android/sdk/ndk/21.4.7075529/build/cmake/platforms.cmake"
+  ],
+  "cleanCommands": [
+    "/Users/pengliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/pengliang/AndroidStudioProjects/CameraView-master/bzyuv/.cxx/cmake/release/arm64-v8a\" clean"
+  ],
+  "buildTargetsCommand": "/Users/pengliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/Users/pengliang/AndroidStudioProjects/CameraView-master/bzyuv/.cxx/cmake/release/arm64-v8a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "bzyuvlib-Release-arm64-v8a": {
+      "artifactName": "bzyuvlib",
+      "buildCommand": "/Users/pengliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/pengliang/AndroidStudioProjects/CameraView-master/bzyuv/.cxx/cmake/release/arm64-v8a\" bzyuvlib",
+      "abi": "arm64-v8a",
+      "output": "/Users/pengliang/AndroidStudioProjects/CameraView-master/bzyuv/build/intermediates/cmake/release/obj/arm64-v8a/libbzyuvlib.so",
+      "runtimeFiles": []
+    }
+  }
+}

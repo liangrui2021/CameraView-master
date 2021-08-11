@@ -1,9 +1,9 @@
-package com.otaliastudios.cameraview.internal;
+package com.cvte.cameraview.internal;
 
 
 import androidx.exifinterface.media.ExifInterface;
 
-import com.otaliastudios.cameraview.internal.ExifHelper;
+import com.cvte.cameraview.internal.ExifHelper;
 
 import org.junit.Test;
 
