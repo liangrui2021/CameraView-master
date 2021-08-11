@@ -34,7 +34,6 @@ import androidx.annotation.VisibleForTesting;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
-import com.luoye.bzyuvlib.BZYUVUtil;
 import com.cvte.cameraview.CameraException;
 import com.cvte.cameraview.CameraOptions;
 import com.cvte.cameraview.PictureResult;
@@ -104,7 +103,7 @@ public class Camera2Engine extends CameraBaseEngine implements
     private CaptureRequest.Builder mRepeatingRequestBuilder;
     private TotalCaptureResult mLastRepeatingResult;
     private final Camera2Mapper mMapper = Camera2Mapper.get();
-    BZYUVUtil YUVUtil;
+//    BZYUVUtil YUVUtil;
     FileOutputStream fileOutputStream;
     // Frame processing
     private ImageReader mFrameProcessingReader; // need this or the reader surface is collected
@@ -130,7 +129,6 @@ public class Camera2Engine extends CameraBaseEngine implements
         super(callback);
         mManager = (CameraManager) getCallback().getContext()
                 .getSystemService(Context.CAMERA_SERVICE);
-        YUVUtil = new BZYUVUtil();
 
 
         String s = getCallback().getContext().getFilesDir().getAbsolutePath() + "/test.yuv";
