@@ -17,25 +17,27 @@ import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
  
-import com.luoye.bzyuvlib.BZYUVUtil
+//import com.luoye.bzyuvlib.BZYUVUtil
  
 import com.cvte.cameraview.*
 import com.cvte.cameraview.filter.Filters
 import com.cvte.cameraview.frame.Frame
 import com.cvte.cameraview.frame.FrameProcessor
-import com.cvte.easyfloat.EasyFloat
-import com.cvte.easyfloat.enums.ShowPattern
-import com.cvte.easyfloat.enums.SidePattern
-import com.cvte.easyfloat.interfaces.OnTouchRangeListener
-import com.cvte.easyfloat.utils.DragUtils
-import com.cvte.easyfloat.widget.BaseSwitchView
-import com.cvte.encode.CameraVideoHardEncoder
-import com.cvte.encode.IEncodeListener
+//import com.cvte.cameraview.frame.Frame
+//import com.cvte.cameraview.frame.FrameProcessor
+//import com.cvte.easyfloat.EasyFloat
+//import com.cvte.easyfloat.enums.ShowPattern
+//import com.cvte.easyfloat.enums.SidePattern
+//import com.cvte.easyfloat.interfaces.OnTouchRangeListener
+//import com.cvte.easyfloat.utils.DragUtils
+//import com.cvte.easyfloat.widget.BaseSwitchView
+//import com.cvte.encode.CameraVideoHardEncoder
+//import com.cvte.encode.IEncodeListener
 import java.io.*
 import java.util.*
 import java.util.concurrent.ArrayBlockingQueue
 
-class CameraActivity : AppCompatActivity()  ,View.OnClickListener, IEncodeListener {
+class CameraActivity : AppCompatActivity()  ,View.OnClickListener  {
 
     companion object {
         public val YUVQueue: ArrayBlockingQueue<ByteArray> = ArrayBlockingQueue<ByteArray>(10)
@@ -44,13 +46,13 @@ class CameraActivity : AppCompatActivity()  ,View.OnClickListener, IEncodeListen
         private const val DECODE_BITMAP = false
     }
 
-//    private val camera: CameraView by lazy { findViewById(R.id.camera) }
+    private val camera: CameraView by lazy { findViewById(R.id.camera) }
     private val controlPanel: ViewGroup by lazy { findViewById(R.id.controls) }
     private var captureTime: Long = 0
-    private lateinit var yuvUtil: BZYUVUtil
-    var fileOutputStream: FileOutputStream? = null
-    var h264FileOutputStream: FileOutputStream? = null
-    var encoder: CameraVideoHardEncoder? = null
+//    private lateinit var yuvUtil: BZYUVUtil
+//    var fileOutputStream: FileOutputStream? = null
+//    var h264FileOutputStream: FileOutputStream? = null
+//    var encoder: CameraVideoHardEncoder? = null
     private var currentFilter = 0
     private val allFilters = Filters.values()
     private val SIZE_1920 = 1920
@@ -64,59 +66,54 @@ class CameraActivity : AppCompatActivity()  ,View.OnClickListener, IEncodeListen
         CameraLogger.setLogLevel(CameraLogger.LEVEL_VERBOSE)
 //        camera.setLifecycleOwner(this)
 //        camera.addCameraListener(Listener())
-        yuvUtil = BZYUVUtil()
-        encoder = CameraVideoHardEncoder(this)
-        encoder!!.initEncoder(SIZE_1920, SIZE_1080, 5000000, FPS_30)
-//        Handler().postDelayed({
-            encoder!!.startEncoder()
-//            encoder!!.requestKeyFrame()
-//        }, 2000)
-        //------------使用硬编替换---------------------
-//        avcCodec = AvcEncoder(this, SIZE_1920, SIZE_1080, FPS_30, 8500 * 1000)
-//        avcCodec!!.StartEncoderThread()
-
+//        yuvUtil = BZYUVUtil()
+//        encoder = CameraVideoHardEncoder(this)
+//        encoder!!.initEncoder(SIZE_1920, SIZE_1080, 5000000, FPS_30)
+//            encoder!!.startEncoder()
+//
+camera.open()
 
 
         val s: String = getFilesDir().getAbsolutePath() + "/test89.yuv"
-        try {
-            fileOutputStream = FileOutputStream(s)
-            val file: File = File(getFilesDir().getAbsolutePath() + "/test123.h264")
-            h264FileOutputStream = FileOutputStream(file)
-        } catch (e: FileNotFoundException) {
-            e.printStackTrace()
-        }
+//        try {
+//            fileOutputStream = FileOutputStream(s)
+//            val file: File = File(getFilesDir().getAbsolutePath() + "/test123.h264")
+//            h264FileOutputStream = FileOutputStream(file)
+//        } catch (e: FileNotFoundException) {
+//            e.printStackTrace()
+//        }
 
         //---------------------------===============
-//        if (USE_FRAME_PROCESSOR) {
-//            camera.addFrameProcessor(object : FrameProcessor {
-//                private var lastTime = System.currentTimeMillis()
-//
-//                @RequiresApi(Build.VERSION_CODES.KITKAT)
-//                override fun process(frame: Frame) {
-//                    val newTime = frame.time
-//                    val delay = newTime - lastTime
-//                    lastTime = newTime
-//                    LOG.v("Frame delayMillis:", delay, "FPS:", 1000 / delay)
-//                    val image = frame.getData<Image>()
+        if (USE_FRAME_PROCESSOR) {
+            camera.addFrameProcessor(object : FrameProcessor {
+                private var lastTime = System.currentTimeMillis()
+
+                @RequiresApi(Build.VERSION_CODES.KITKAT)
+                override fun process(frame: Frame) {
+                    val newTime = frame.time
+                    val delay = newTime - lastTime
+                    lastTime = newTime
+                    LOG.v("Frame delayMillis:", delay, "FPS:", 1000 / delay)
+                    val image = frame.getData<Image>()
 //                    val bytesYUV420 = yuvUtil.preHandleYUV420(image, false, 0)
-////                    val byteNv21 = ByteArray(bytesYUV420.size)
-////                    BZYUVUtil.yuvI420ToNV21(bytesYUV420, byteNv21, image.width, image.height)
-//
-//                    Log.i(LOG.toString(), "onImageAvailable: " + image.height + " width: " + image.width);
-////                    try {
-////                        fileOutputStream?.write(bytesYUV420)
-////                    } catch (e: IOException) {
-////                        e.printStackTrace();
-////                    }
-//                    //            Frame frame = getFrameManager().getFrame(image,
-////                    System.currentTimeMillis());
+//                    val byteNv21 = ByteArray(bytesYUV420.size)
+//                    BZYUVUtil.yuvI420ToNV21(bytesYUV420, byteNv21, image.width, image.height)
+
+                    Log.i(LOG.toString(), "onImageAvailable: " + image.height + " width: " + image.width);
+//                    try {
+//                        fileOutputStream?.write(bytesYUV420)
+//                    } catch (e: IOException) {
+//                        e.printStackTrace();
+//                    }
+                    //            Frame frame = getFrameManager().getFrame(image,
+//                    System.currentTimeMillis());
 //                    addDataToEncoder(bytesYUV420, 1920, 1080)
-////                    putYUVData(bytesYUV420,bytesYUV420.size)
-//                    image.close()
-//
-//                }
-//            })
-//        }
+//                    putYUVData(bytesYUV420,bytesYUV420.size)
+                    image.close()
+
+                }
+            })
+        }
 //        findViewById<View>(R.id.edit).setOnClickListener(this)
 //        findViewById<View>(R.id.capturePicture).setOnClickListener(this)
 //        findViewById<View>(R.id.capturePictureSnapshot).setOnClickListener(this)
@@ -208,7 +205,7 @@ class CameraActivity : AppCompatActivity()  ,View.OnClickListener, IEncodeListen
 //        } catch (e: IOException) {
 //            e.printStackTrace()
 //        }
-        encoder!!.addFrame(srcData, srcData.size, System.currentTimeMillis())
+//        encoder!!.addFrame(srcData, srcData.size, System.currentTimeMillis())
 //        } else {
 //            encoder?.addFrame(destData, destData.size)
 //        }
@@ -297,7 +294,7 @@ class CameraActivity : AppCompatActivity()  ,View.OnClickListener, IEncodeListen
 //            R.id.captureVideo -> captureVideo()
 //            R.id.captureVideoSnapshot -> captureVideoSnapshot()
 //            R.id.toggleCamera -> toggleCamera()
-            R.id.changeFilter -> showAppFloat()
+//            R.id.changeFilter -> showAppFloat()
         }
     }
 //
@@ -408,82 +405,82 @@ class CameraActivity : AppCompatActivity()  ,View.OnClickListener, IEncodeListen
 //        }
 //    }
 
-    override fun onEncodeData(data: ByteArray, size: Int, timeStamp: Int) {
-        try {
-            h264FileOutputStream?.write(data, 0, size)
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-    }
-
-    private fun showAppFloat() {
-        EasyFloat.with(this.applicationContext)
-                .setShowPattern(ShowPattern.ALL_TIME)
-                .setSidePattern(SidePattern.RESULT_SIDE)
-                .setImmersionStatusBar(true)
-                .setGravity(Gravity.END, -20, 10)
-                .setLayout(R.layout.float_app) {
-                    it.findViewById<ImageView>(R.id.ivClose).setOnClickListener {
-                        EasyFloat.dismiss()
-                    }
-                    val camera = it.findViewById<CameraView>(R.id.camera)
-                            camera.open()
-                    // ------------
-                    if (USE_FRAME_PROCESSOR) {
-                        camera.addFrameProcessor(object : FrameProcessor {
-                            private var lastTime = System.currentTimeMillis()
-
-                            @RequiresApi(Build.VERSION_CODES.KITKAT)
-                            override fun process(frame: Frame) {
-                                val newTime = frame.time
-                                val delay = newTime - lastTime
-                                lastTime = newTime
-                                LOG.v("Frame delayMillis:", delay, "FPS:", 1000 / delay)
-                                val image = frame.getData<Image>()
-                                val bytesYUV420 = yuvUtil.preHandleYUV420(image, false, 0)
-//                    val byteNv21 = ByteArray(bytesYUV420.size)
-//                    BZYUVUtil.yuvI420ToNV21(bytesYUV420, byteNv21, image.width, image.height)
-
-                                Log.i(LOG.toString(), "onImageAvailable: " + image.height + " width: " + image.width);
-//                    try {
-//                        fileOutputStream?.write(bytesYUV420)
-//                    } catch (e: IOException) {
-//                        e.printStackTrace();
+//    override fun onEncodeData(data: ByteArray, size: Int, timeStamp: Int) {
+//        try {
+//            h264FileOutputStream?.write(data, 0, size)
+//        } catch (e: IOException) {
+//            e.printStackTrace()
+//        }
+//    }
+//
+//    private fun showAppFloat() {
+//        EasyFloat.with(this.applicationContext)
+//                .setShowPattern(ShowPattern.ALL_TIME)
+//                .setSidePattern(SidePattern.RESULT_SIDE)
+//                .setImmersionStatusBar(true)
+//                .setGravity(Gravity.END, -20, 10)
+//                .setLayout(R.layout.float_app) {
+//                    it.findViewById<ImageView>(R.id.ivClose).setOnClickListener {
+//                        EasyFloat.dismiss()
 //                    }
-                                //            Frame frame = getFrameManager().getFrame(image,
-//                    System.currentTimeMillis());
-                                addDataToEncoder(bytesYUV420, 1920, 1080)
-//                    putYUVData(bytesYUV420,bytesYUV420.size)
-                                image.close()
-
-                            }
-                        })
-                    }
-
-                    it.findViewById<CheckBox>(R.id.checkbox)
-                            .setOnCheckedChangeListener { _, isChecked -> EasyFloat.dragEnable(isChecked) }
-
-                }
-                .registerCallback {
-                    drag { _, motionEvent ->
-                        DragUtils.registerDragClose(motionEvent, object : OnTouchRangeListener {
-                            override fun touchInRange(inRange: Boolean, view: BaseSwitchView) {
-                                view.findViewById<TextView>(R.id.tv_delete).text =
-                                        if (inRange) "松手删除" else "删除浮窗"
-
-                                view.findViewById<ImageView>(R.id.iv_delete)
-                                        .setImageResource(
-                                                if (inRange) R.drawable.icon_delete_selected
-                                                else R.drawable.icon_delete_normal
-                                        )
-                            }
-
-                            override fun touchUpInRange() {
-                                EasyFloat.dismiss()
-                            }
-                        }, showPattern = ShowPattern.ALL_TIME)
-                    }
-                }
-                .show()
-    }
+//                    val camera = it.findViewById<CameraView>(R.id.camera)
+//                            camera.open()
+//                    // ------------
+//                    if (USE_FRAME_PROCESSOR) {
+//                        camera.addFrameProcessor(object : FrameProcessor {
+//                            private var lastTime = System.currentTimeMillis()
+//
+//                            @RequiresApi(Build.VERSION_CODES.KITKAT)
+//                            override fun process(frame: Frame) {
+//                                val newTime = frame.time
+//                                val delay = newTime - lastTime
+//                                lastTime = newTime
+//                                LOG.v("Frame delayMillis:", delay, "FPS:", 1000 / delay)
+//                                val image = frame.getData<Image>()
+//                                val bytesYUV420 = yuvUtil.preHandleYUV420(image, false, 0)
+////                    val byteNv21 = ByteArray(bytesYUV420.size)
+////                    BZYUVUtil.yuvI420ToNV21(bytesYUV420, byteNv21, image.width, image.height)
+//
+//                                Log.i(LOG.toString(), "onImageAvailable: " + image.height + " width: " + image.width);
+////                    try {
+////                        fileOutputStream?.write(bytesYUV420)
+////                    } catch (e: IOException) {
+////                        e.printStackTrace();
+////                    }
+//                                //            Frame frame = getFrameManager().getFrame(image,
+////                    System.currentTimeMillis());
+//                                addDataToEncoder(bytesYUV420, 1920, 1080)
+////                    putYUVData(bytesYUV420,bytesYUV420.size)
+//                                image.close()
+//
+//                            }
+//                        })
+//                    }
+//
+//                    it.findViewById<CheckBox>(R.id.checkbox)
+//                            .setOnCheckedChangeListener { _, isChecked -> EasyFloat.dragEnable(isChecked) }
+//
+//                }
+//                .registerCallback {
+//                    drag { _, motionEvent ->
+//                        DragUtils.registerDragClose(motionEvent, object : OnTouchRangeListener {
+//                            override fun touchInRange(inRange: Boolean, view: BaseSwitchView) {
+//                                view.findViewById<TextView>(R.id.tv_delete).text =
+//                                        if (inRange) "松手删除" else "删除浮窗"
+//
+//                                view.findViewById<ImageView>(R.id.iv_delete)
+//                                        .setImageResource(
+//                                                if (inRange) R.drawable.icon_delete_selected
+//                                                else R.drawable.icon_delete_normal
+//                                        )
+//                            }
+//
+//                            override fun touchUpInRange() {
+//                                EasyFloat.dismiss()
+//                            }
+//                        }, showPattern = ShowPattern.ALL_TIME)
+//                    }
+//                }
+//                .show()
+//    }
 }

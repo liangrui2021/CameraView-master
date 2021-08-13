@@ -1499,7 +1499,7 @@ public class Camera2Engine extends CameraBaseEngine implements
             Frame frame = getFrameManager().getFrame(image,
                     System.currentTimeMillis());
             if (frame != null) {
-                LOG.v("onImageAvailable:", "Image acquired, dispatching. width: " +image.getWidth()+" height: "+image.getHeight());
+                Log.v("onImageAvailable:", "Image acquired, dispatching. width: " +image.getWidth()+" height: "+image.getHeight());
                 getCallback().dispatchFrame(frame);
 
             } else {
