@@ -1,5 +1,5 @@
 include(":encode")
 include(":cameraview")
-//include(":demo")
+include(":demo")
 //include(":bzyuv")
 //include(":easyfloat")
